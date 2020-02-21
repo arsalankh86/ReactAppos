@@ -3,8 +3,7 @@ import Header from "./header";
 import Footer from "./footer";
 import Form from "./Form";
 import DisplayData from "./displaydata";
-import ReactDOM from 'react-dom';
-
+import ReactDOM from "react-dom";
 
 class Counter extends React.Component {
   state = {
@@ -21,15 +20,24 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <Header/>
+        <Header />
         {/* <h1>{this.props.hp}</h1> */}
 
+        <h4><u>Display Dynamic Listing</u></h4>
         <div>
-            <ul>
+          <ul>
             <li>Data</li>
-            </ul>
-            {this.props.children}
-         </div>
+          </ul>
+          {this.props.children}
+        </div>
+
+        <ul>
+          {" "}
+          {this.state.tags.map(tag => (
+            <li key={tag}>{tag}</li>
+          ))}{" "}
+        </ul>
+        <h4><u>Increment Counter</u></h4>
         <span style={{ fontSize: 30 }} className={this.getBadgeClasses()}>
           {this.formatCount()}
         </span>
@@ -39,18 +47,18 @@ class Counter extends React.Component {
         >
           Increment
         </button>
-        <ul>
-          {" "}
-          {this.state.tags.map(tag => (
-            <li key={tag}>{tag}</li>
-          ))}{" "}
-        </ul>
-        <h2>{this.props.fp}</h2>
+
+        <br/>
         <br />
+        <h4><u>React Form Example</u></h4>
         <Form />
         <br />
+
+        <h4><u>React Ag Grid Example</u></h4>
         <DisplayData></DisplayData>
+        <h2>{this.props.fp}</h2>
       </div>
+      
     );
   }
 
