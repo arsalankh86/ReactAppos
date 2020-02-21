@@ -9,7 +9,7 @@ import DisplayData from './components/displaydata';
 import { Router, Route, Link, browserHistory } from 'react-router';
 
 
-ReactDOM.render(<Counter hp="header" fp="footer" />, document.getElementById('root'));
+ReactDOM.render(<Counter  fp="footer" />, document.getElementById('root'));
 
 // ReactDOM.render((
 //     <Router >
